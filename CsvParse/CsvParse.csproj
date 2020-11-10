@@ -4,7 +4,7 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{707D137A-0C7F-47D6-98DF-D38AC8848BF6}</ProjectGuid>
+    <ProjectGuid>{66CA2F8E-CA5F-4E4A-A33A-A676BAB406DC}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>CsvParse</RootNamespace>
@@ -120,7 +120,7 @@
     <RestoreProjectStyle>PackageReference</RestoreProjectStyle>
   </PropertyGroup>
   <ItemGroup>
-    <Compile Include="CsvParse.cs" />
+    <Compile Include="CsvParses.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="Properties\CsvParse.rd.xml" />
   </ItemGroup>

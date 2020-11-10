@@ -171,7 +171,7 @@
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\CsvParse\CsvParse.csproj">
-      <Project>{707d137a-0c7f-47d6-98df-d38ac8848bf6}</Project>
+      <Project>{66ca2f8e-ca5f-4e4a-a33a-a676bab406dc}</Project>
       <Name>CsvParse</Name>
     </ProjectReference>
   </ItemGroup>

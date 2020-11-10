@@ -13,12 +13,12 @@ namespace FilePicker.Models
 
         }
 
-        public Figures(string str1, string str2, int str3, string str4)
+        public Figures(string name, string series, int year, string company)
         {
-            this.Name = str1;
-            this.Series = str2;
-            this.Year = str3;
-            this.Company = str4;
+            Name = name;
+            Series = series;
+            Year = year;
+            Company = company;
         }
 
         public string Name { get; set; }

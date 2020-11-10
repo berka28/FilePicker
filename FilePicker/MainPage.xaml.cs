@@ -31,9 +31,8 @@ namespace FilePicker
         public MainPage()
         {
            this.InitializeComponent();
+
         }
-
-
         private async void btnJson_Click(object sender, RoutedEventArgs e)
         {
             var picker = new FileOpenPicker();
@@ -46,34 +45,38 @@ namespace FilePicker
             List<Figures> DeserializedProducts = JsonConvert.DeserializeObject<List<Figures>>(text);
 
             ListViewJson.ItemsSource = DeserializedProducts;
+            
         }
 
-        private ObservableCollection<string> CsvRows = new ObservableCollection<string>();
+        public ObservableCollection<string> CsvRows = new ObservableCollection<string>();
 
         private async void btnCsv_Click(object sender, RoutedEventArgs e)
         {
-            var openPicker = new FileOpenPicker();
-            openPicker.ViewMode = PickerViewMode.List;
-            openPicker.FileTypeFilter.Add(".csv");
+            var picker = new FileOpenPicker();
+            picker.ViewMode = PickerViewMode.List;
+            picker.FileTypeFilter.Add(".csv");
 
-            var file = await openPicker.PickSingleFileAsync();
+            var file = await picker.PickSingleFileAsync();
+
             CsvRows.Clear();
-           /* using (CsvParse.CsvFileReader csvReader = new CsvParse.CsvFileReader(await file.OpenStreamForReadAsync())
+            using (CsvParse.CsvFileReader csvReader = new CsvParse.CsvFileReader(await file.OpenStreamForReadAsync()))
             {
                 CsvParse.CsvRow row = new CsvParse.CsvRow();
 
-            {
-                string newRow = "";
-                for (int i = 0; i < RowDefinitio; i++)
+                while (csvReader.ReadRow(row))
                 {
-                    newRow +=[i] + ",";
-                }
-
-                CsvRows.Add(newRow);
+                    string newRow = "";
+                    for(int i=0; i <row.Count; i++)
+                    {
+                        newRow += row[i] + ";";
+                    }
+                    CsvRows.Add(newRow);
+                }  
             }
-           */
+
+            CsvRowsListView.ItemsSource = CsvRows;
         }
-           
+
 
         private async void btnXml_Click(object sender, RoutedEventArgs e)
         {
