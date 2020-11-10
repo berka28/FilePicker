@@ -18,6 +18,7 @@ using Newtonsoft.Json;
 using FilePicker.Models;
 using System.Collections.ObjectModel;
 using CsvParse;
+using Windows.UI.Xaml.Shapes;
 
 // The Blank Page item template is documented at https://go.microsoft.com/fwlink/?LinkId=402352&clcid=0x409
 
@@ -65,6 +66,7 @@ namespace FilePicker
 
                 while (csvReader.ReadRow(row))
                 {
+                    
                     string newRow = "";
                     for(int i=0; i <row.Count; i++)
                     {
@@ -74,7 +76,7 @@ namespace FilePicker
                 }  
             }
 
-            CsvRowsListView.ItemsSource = CsvRows;
+            ListViewCsv.ItemsSource = CsvRows;
         }
 
 

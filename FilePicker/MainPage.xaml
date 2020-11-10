@@ -41,7 +41,7 @@
             </ListView.ItemTemplate>
         </ListView>
 
-        <ListView Grid.Row="1" Grid.Column="1" x:Name="CsvRowsListView"/>
+        <ListView Grid.Row="1" Grid.Column="1" x:Name="ListViewCsv"/>
 
         <ListView Grid.Row="1" Grid.Column="2" x:Name="ListViewXml">
             <ListView.ItemTemplate>
